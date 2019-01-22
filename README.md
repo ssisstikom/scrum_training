@@ -29,3 +29,7 @@ php app.php
 ## Run unit test
 
 .\vendor\bin\phpunit tests
+
+Note:
+
+Using Visual Studio Code
