@@ -5,6 +5,7 @@ namespace DOSBox\Command;
 use DOSBox\Interfaces\IDrive;
 use DOSBox\Command\Library\CmdCd as CmdCd;
 use DOSBox\Command\Library\CmdDir as CmdDir;
+use DOSBox\Command\Library\CmdTime as CmdTime;
 use DOSBox\Command\Library\CmdMkDir as CmdMkDir;
 use DOSBox\Command\Library\CmdMkFile as CmdMkFile;
 
@@ -19,6 +20,7 @@ class CommandFactory {
         array_push($this->commands, new CmdMkDir("md", $drive));
         array_push($this->commands, new CmdMkFile("mkfile", $drive));
         array_push($this->commands, new CmdMkFile("mf", $drive));
+        array_push($this->commands, new CmdTime("time", $drive));
 
         // Add your commands here
     }
