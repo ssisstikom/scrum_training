@@ -20,7 +20,7 @@ class CmdMkDirTest extends DOSBoxTestCase {
     }
 
     public function testCreateDirectory(){
-    	$this->command->createDirectory("subdir", $this->drive);
+    	$this->command->createDirectory("subdir", $this->drive, $this->mockOutputter);
 
     	$this->assertCount(1, $this->drive->getCurrentDirectory()->getContent());
     }
@@ -79,6 +79,17 @@ class CmdMkDirTest extends DOSBoxTestCase {
         $this->assertEquals($this->numbersOfDirectoriesBeforeTest + 3, $this->drive->getRootDirectory()->getNumberOfContainedDirectories());
 
         $this->assertEmpty($this->mockOutputter->getOutput());
+    }
+
+    public function testCmdMkDir_CreateNewDirectory_DirectoryTimestampIsNotNull()
+    {
+        $testDirName = "jangkrik";
+        $this->executeCommand("mkdir " . $testDirName);
+
+        $testDirectory = $this->drive->getItemFromPath( $this->drive->getDriveLetter() . '\\' . $testDirName );
+        $this->assertSame($this->drive->getRootDirectory(), $testDirectory->getParent());
+        $this->assertNotNull($testDirectory->getTimeStamp());
+        $this->assertEquals($this->numbersOfDirectoriesBeforeTest + 1, $this->drive->getRootDirectory()->getNumberOfContainedDirectories());
     }
 /*
     public function testCmdMkDir_AllParametersAreReset() {
