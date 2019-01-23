@@ -66,7 +66,7 @@ class CmdDir extends Command {
                 $outputter->printNoLine("  ");
             } else {
                 $outputter->printNoLine("\t\t\t\t");
-                $outputter->printNoLine($item->getSize() . " ");
+                $outputter->printNoLine($item->getName() . " mb");
             }
 
             $outputter->printNoLine($item->getName());

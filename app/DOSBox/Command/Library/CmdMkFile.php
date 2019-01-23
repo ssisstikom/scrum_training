@@ -21,7 +21,7 @@ class CmdMkFile extends Command {
     }
 
     public function execute(IOutputter $outputter){
-        $fileName = $this->params[0];
+        $fileName = isset($this->params[0]) ? $this->params[0] : '';;
         $fileContent = isset($this->params[1]) ? $this->params[1] : '';
         $newFile = new File($fileName, $fileContent);
         $this->getDrive()->getCurrentDirectory()->add($newFile);
