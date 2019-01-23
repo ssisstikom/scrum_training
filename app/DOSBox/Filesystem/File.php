@@ -7,8 +7,8 @@ use DOSBox\Filesystem\FileSystemItem;
 class File extends FileSystemItem {
     private $content;
 
-    public function __construct($name, $content){
-        parent::__construct($name, NULL);
+    public function __construct($name, $content, $timestamp){
+        parent::__construct($name, NULL,$timestamp);
         $this->content = $content;
     }
 
@@ -23,6 +23,8 @@ class File extends FileSystemItem {
     public function getSize() {
         return strlen($this->content);
     }
+
+    
 
     public function getNumberOfContainedFiles() {
         return 0;  // A file does not contain any other files

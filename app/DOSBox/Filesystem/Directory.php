@@ -7,8 +7,8 @@ use DOSBox\Filesystem\FileSystemItem;
 class Directory extends FileSystemItem {
     private $content; // FileSystemItem
 
-    public function __construct($name){
-        parent::__construct($name, NULL);
+    public function __construct($name,$timestamp = ''){
+        parent::__construct($name, NULL, $timestamp);
         $this->content = array();
     }
 
@@ -44,6 +44,11 @@ class Directory extends FileSystemItem {
 
     public function isDirectory() {
         return true;
+    }
+
+    public function getTimeStamp()
+    {
+        return $this->timestamp;
     }
 
     public function getNumberOfContainedFiles() {

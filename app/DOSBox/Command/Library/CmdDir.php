@@ -60,13 +60,15 @@ class CmdDir extends Command {
     public function printContent($directoryContent, IOutputter $outputter) {
         foreach ($directoryContent as $item) {
             if ($item->isDirectory()) {
-                $outputter->printNoLine("\t\t\t");
+                $outputter->printNoLine($item->getTimeStamp().'');
+                $outputter->printNoLine("\t");
                 $outputter->printNoLine("<DIR>");
                 $outputter->printNoLine("\t");
                 $outputter->printNoLine("  ");
             } else {
-                $outputter->printNoLine("\t\t\t\t");
-                $outputter->printNoLine($item->getName() . " mb");
+                $outputter->printNoLine($item->getTimeStamp().'');
+                $outputter->printNoLine("\t\t");
+                $outputter->printNoLine($item->getSize()." ");
             }
 
             $outputter->printNoLine($item->getName());
