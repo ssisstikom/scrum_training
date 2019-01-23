@@ -46,6 +46,8 @@ abstract class FileSystemItem {
             return false;
         }
 
+        
+
         return true;
     }
 
