@@ -55,7 +55,7 @@ class CmdMkDir extends Command {
         if($not_exist){
             $drive->getCurrentDirectory()->add($newDirectory);
         } else{
-            $outputter->printLine("This directory name is exist on this directory");
+            $outputter->printLine("This directory name is already exist on this directory");
         }
     }
 }

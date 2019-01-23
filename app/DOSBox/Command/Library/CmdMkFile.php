@@ -35,7 +35,7 @@ class CmdMkFile extends Command {
         if($not_exist){
             $this->getDrive()->getCurrentDirectory()->add($newFile);
         } else{
-            $outputter->printLine("This file name is exist on this directory");
+            $outputter->printLine("This file name is already exist on this directory");
         }
         
     }
