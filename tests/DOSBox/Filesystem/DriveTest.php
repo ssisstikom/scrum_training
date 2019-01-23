@@ -22,14 +22,14 @@ class DriveTest extends DOSBoxTestCase {
     	$this->drive = new Drive("C");
     	$this->rootDir = $this->drive->getRootDir();
 
-        $this->file1InRootDir = new File("file1InRootDir", "test");
+        $this->file1InRootDir = new File("file1InRootDir", "test","");
         $this->rootDir->add( $this->file1InRootDir );
 
         // C:\subdir1
     	$this->subDir1 = new Directory("subdir1");
     	$this->rootDir->add( $this->subDir1 );
 
-        $this->file2InSubDir1 = new File("file1InSubDir1", "test");
+        $this->file2InSubDir1 = new File("file1InSubDir1", "test","");
         $this->subDir1->add( $this->file2InSubDir1 );
 
         // C:\subdir2

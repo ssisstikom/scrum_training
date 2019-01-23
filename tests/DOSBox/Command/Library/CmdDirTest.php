@@ -23,14 +23,14 @@ class CmdDirTest extends DOSBoxTestCase {
         $this->rootDir->add($this->subDir1);
 
         // C:\subdir1\file1.txt
-        $this->file1InDir1 = new File("file1.txt", "");
+        $this->file1InDir1 = new File("file1.txt", "","");
         $this->subDir1->add($this->file1InDir1);
         // C:\subdir1\file2.txt
-        $this->file2InDir1 = new File("file2.txt", "");
+        $this->file2InDir1 = new File("file2.txt", "","");
         $this->subDir1->add($this->file2InDir1);
 
         // C:\file1.txt
-        $this->file1 = new File("file1.txt", "");
+        $this->file1 = new File("file1.txt", "","");
         $this->rootDir->add($this->file1);
 
         $this->subDir2 = new Directory("subdir2");

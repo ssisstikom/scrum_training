@@ -20,7 +20,7 @@ class CmdCdTest extends DOSBoxTestCase {
         // C:\subdir1
         $this->subDir1 = new Directory("subdir1");
         $this->rootDir->add($this->subDir1);
-        $this->file1InDir1 = new File("File1InDir1", "");
+        $this->file1InDir1 = new File("File1InDir1", "","");
         $this->subDir1->add($this->file1InDir1);
 
         $this->subDir2 = new Directory("subdir2");
