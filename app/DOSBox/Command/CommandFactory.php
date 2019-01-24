@@ -6,6 +6,7 @@ use DOSBox\Interfaces\IDrive;
 use DOSBox\Command\Library\CmdCd as CmdCd;
 use DOSBox\Command\Library\CmdDir as CmdDir;
 use DOSBox\Command\Library\CmdVer as CmdVer;
+use DOSBox\Command\Library\CmdCopy as CmdCopy;
 use DOSBox\Command\Library\CmdTime as CmdTime;
 use DOSBox\Command\Library\CmdMkDir as CmdMkDir;
 use DOSBox\Command\Library\CmdMkFile as CmdMkFile;
@@ -24,6 +25,8 @@ class CommandFactory {
         array_push($this->commands, new CmdMkFile("mf", $drive));
         array_push($this->commands, new CmdTime("time", $drive));
         array_push($this->commands, new CmdVer("ver", $drive));
+        array_push($this->commands, new CmCopy("copy", $drive));
+        array_push($this->commands, new CmCopy("cp", $drive));
         array_push($this->commands, new CmdHelp("help", $drive));
 
         // Add your commands here
